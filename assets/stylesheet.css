@@ -1,3 +1,7 @@
+main {
+  text-align: center;
+}
+
 .dropdown-menu {
   width: 300px;
 }
@@ -9,4 +13,5 @@
 
 .balance {
   font-size: 2.5em;
+  margin-top: 0;
 }
