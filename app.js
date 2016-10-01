@@ -24,5 +24,17 @@
       controllerAs: "VM",
       templateUrl: "views/user/edit.html"
     })
+    .state("userIndex", {
+      url: "/user",
+      controller: "userIndexController",
+      controllerAs: "VM",
+      templateUrl: "views/user/index.html"
+    })
+    .state("requestIndex", {
+      url: "/user/:id/requests",
+      controller: "requestsIndexController",
+      controllerAs: "VM",
+      templateUrl: "views/request/index.html"
+    })
   }
 }())
