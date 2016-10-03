@@ -23,6 +23,13 @@
           method: 'GET',
           url: `http://localhost:7000/api/user/${userId}`
         })
+      },
+      search: function(username) {
+        return $http({
+          method: 'POST',
+          url: 'http://localhost:7000/api/user/search',
+          data: {username: username}
+        })
       }
     }
   }

@@ -6,12 +6,13 @@
 
 <div class="container">
   <form>
-    <input type="text" class="form-control" placeholder="Username">
-    <button type="submit" class="btn btn-success">Find Roommate</button>
+    <input type="text" class="form-control" placeholder="Find By Username" data-ng-model="VM.username">
+    <button type="submit" class="btn btn-success" data-ng-click="VM.search()">Search</button>
   </form>
 </div>
 
-<div class="roommate">
-  <h3>Person Name</h3>
-  <button type="submit" class="btn btn-success">Send Request</button>
+<div class="roommate" data-ng-if="VM.user">
+  <h3>{{VM.user.name}}</h3>
+  <p>{{VM.user.username}}</p>
+  <button type="submit" class="btn btn-success" data-ng-click="VM.createRoommate()">Send Roommate Request</button>
 </div>
