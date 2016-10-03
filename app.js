@@ -12,11 +12,11 @@
 
   function routerFunction($stateProvider) {
     $stateProvider
-    .state("userShow", {
-      url: "/user/:id",
-      controller: "userShowController",
+    .state("userNew", {
+      url: "/user/new",
+      controller: "userNewController",
       controllerAs: "VM",
-      templateUrl: "views/user/show.html"
+      templateUrl: "views/user/new.html"
     })
     .state("userEdit", {
       url: "/user/:id/edit",
@@ -29,6 +29,12 @@
       controller: "userIndexController",
       controllerAs: "VM",
       templateUrl: "views/user/index.html"
+    })
+    .state("userShow", {
+      url: "/user/:id",
+      controller: "userShowController",
+      controllerAs: "VM",
+      templateUrl: "views/user/show.html"
     })
     .state("requestIndex", {
       url: "/user/:id/requests",

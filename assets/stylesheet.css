@@ -28,3 +28,8 @@ input {
   font-size: 2.5em;
   margin-top: 0;
 }
+
+.requests p,
+.requests h5 {
+  display: inline-block;
+}

@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="page-header">
+    <h1>Sign Up <small>Today</small></h1>
+  </div>
+</div>
+
+<div class="error" data-ng-if="VM.error">
+  <p>
+    {{VM.error.username.message}}
+  </p>
+</div>
+
+<div class="container">
+  <form>
+    <input type="text" class="form-control" placeholder="Name" data-ng-model="VM.newUser.name">
+    <input type="text" class="form-control" placeholder="Username" data-ng-model="VM.newUser.username">
+    <input type="password" class="form-control" placeholder="Password" data-ng-model="VM.newUser.password">
+    <button type="submit" class="btn btn-success" data-ng-click="VM.createUser()">Create Account</button>
+  </form>
+</div>
