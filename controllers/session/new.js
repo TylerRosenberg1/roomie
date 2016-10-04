@@ -20,12 +20,12 @@
         console.log(response);
         if (response.data.error) {
           vm.error = response.data.error;
+          delete $window.sessionStorage.token;
         } else {
           $window.sessionStorage.token = response.data.token;
-          //redirect to blah blah response.data._id
+          $window.location.href = `/#/user/dashboard`
         }
       }, function error(error) {
-          delete $window.sessionStorage.token;
       })
     }
   }

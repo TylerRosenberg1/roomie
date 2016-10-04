@@ -24,7 +24,7 @@
     }
     vm.createRoommate = function() {
       roommateFactory.create(vm.user._id).then(function(response) {
-        console.log(response);
+        //redirect to dashboard
       })
     }
   }

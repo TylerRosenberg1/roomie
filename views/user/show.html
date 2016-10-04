@@ -1,30 +1,8 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#/">Roomtrack</a>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a>My Dashboard</a></li>
-        <li><a href="#">Find Roommates</a></li>
-        <li><a href="#">Roommate Requests</a></li>
-        <li><a href="#">Settings</a></li>
-        <li><a href="#">Sign Out</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<nav-bar></nav-bar>
 
 <div class="container">
   <div class="page-header">
     <h1>{{VM.name}}'s <small>Roommates</small></h1>
-
   </div>
 </div>
 
@@ -38,18 +16,16 @@
         </button>
         <ul class="dropdown-menu">
           <li>
-            <div class="input-group">
-              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="$" data-ng-model="VM.newRequest.amount">
-              <span class="input-group-addon">.00</span>
-            </div>
-          </li>
-          <li>
-            <div class="input-group">
-              <input type="text" class="form-control" aria-label="For" placeholder="Short Description" data-ng-model="VM.newRequest.description">
-            </div>
-          </li>
-          <li>
-            <button type="submit" class="btn btn-success" data-ng-click="VM.createRequest(roommate._id._id)">Send Request</button>
+            <form>
+              <div class="input-group">
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Nearest $ (i.e. 45)" data-ng-model="VM.newRequest.amount">
+                <span class="input-group-addon">.00</span>
+              </div>
+
+                <input type="text" class="form-control" aria-label="For" placeholder="Short Description" data-ng-model="VM.newRequest.description">
+
+              <button type="submit" class="btn btn-success" data-ng-click="VM.createRequest(roommate._id._id)">Send Request</button>
+            </form>
           </li>
         </ul>
       </div>
@@ -62,7 +38,7 @@
       <h6>Requests From <span style="text-transform:capitalize">{{roommate._id.name}}</span></h6>
       <div class="requests" data-ng-repeat="request in roommate.requests">
         <h5>
-          ${{request.amount}}
+          -${{request.amount}}
         </h5>
         <p>
           {{request.description}}

@@ -5,23 +5,24 @@
   .module("roomtrack")
   .controller("roommateRequestIndexController", [
     "roommateFactory",
+    "$location",
     roommateRequestIndexControllerFunction
   ])
 
-  function roommateRequestIndexControllerFunction(roommateFactory) {
+  function roommateRequestIndexControllerFunction(roommateFactory, $location) {
     var vm = this;
     roommateFactory.index().then(function(response) {
-      console.log(response);
       vm.roommateRequesters = response.data;
     })
     vm.acceptRequest = function(requesterId) {
       roommateFactory.update(requesterId).then(function(response) {
-        console.log(response);
+        $window.location.href = "/#/user/dashboard"
       })
     }
     vm.destroyRequest = function(requesterId) {
       roommateFactory.destroy(requesterId).then(function(response) {
-        console.log(response);
+        $window.location.href = "/#/user/dashboard"
+
       })
     }
   }

@@ -1,3 +1,9 @@
+<div class="container">
+  <div class="page-header">
+    <h1>Log In <small>With Your Username And Password</small></h1>
+  </div>
+</div>
+
 <div class="error" data-ng-if="VM.error">
   <p>
     {{VM.error.username.message}}
@@ -6,7 +12,7 @@
 
 <div class="container">
   <form>
-    <input type="text" class="form-control" placeholder="Name" data-ng-model="VM.user.username">
+    <input type="text" class="form-control" placeholder="Username" data-ng-model="VM.user.username">
     <input type="password" class="form-control" placeholder="Password" data-ng-model="VM.user.password">
     <button type="submit" class="btn btn-success" data-ng-click="VM.createSession()">Log In</button>
   </form>

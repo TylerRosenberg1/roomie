@@ -33,3 +33,16 @@ input {
 .requests h5 {
   display: inline-block;
 }
+
+.jumbo {
+  font-size: 10em;
+  display: block;
+}
+
+.roommate {
+  padding-bottom: 1.5em;
+  padding-top: 1em;
+  background-color: rgba(20, 134, 215, 0.10);
+  border-radius: 10px;
+  margin-top: 0.2em;
+}

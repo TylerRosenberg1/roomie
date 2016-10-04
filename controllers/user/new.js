@@ -16,11 +16,11 @@
         if (response.data.errors) {
           vm.error = response.data.errors
         } else {
-          vm.user = response.data;
-          $window.location.href = `/#/user/${vm.user._id}`
+          $window.sessionStorage.token = response.data.token;
+          $window.location.href = "/#/user/dashboard"
         }
       }, function error(error) {
-        
+
       })
     }
   }
