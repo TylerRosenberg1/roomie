@@ -7,11 +7,21 @@
   ])
   .config([
     "$stateProvider",
+    "$httpProvider",
     routerFunction
   ])
 
-  function routerFunction($stateProvider) {
+  function routerFunction($stateProvider, $httpProvider) {
+
+     $httpProvider.interceptors.push('authInterceptor');
+
     $stateProvider
+    .state("sessionNew", {
+      url: "/session/new",
+      controller: "sessionNewController",
+      controllerAs: "VM",
+      templateUrl: "views/session/new.html"
+    })
     .state("userNew", {
       url: "/user/new",
       controller: "userNewController",
