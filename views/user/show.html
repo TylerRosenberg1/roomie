@@ -7,11 +7,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Roomtrack</a>
+      <a class="navbar-brand" href="#/">Roomtrack</a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">My Dashboard</a></li>
+        <li><a>My Dashboard</a></li>
         <li><a href="#">Find Roommates</a></li>
         <li><a href="#">Roommate Requests</a></li>
         <li><a href="#">Settings</a></li>
@@ -29,45 +29,47 @@
 </div>
 
 <div class="container">
-  <div class="roommate" data-ng-repeat="roommate in VM.roommates">
-    <h3 style="text-transform:capitalize">{{roommate._id.name}}</h3>
-    <div class="btn-group">
-      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Owes Me <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu">
-        <li>
-          <div class="input-group">
-            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="$" data-ng-model="VM.newRequest.amount">
-            <span class="input-group-addon">.00</span>
-          </div>
-        </li>
-        <li>
-          <div class="input-group">
-            <input type="text" class="form-control" aria-label="For" placeholder="Short Description" data-ng-model="VM.newRequest.description">
-          </div>
-        </li>
-        <li>
-          <button type="submit" class="btn btn-success" data-ng-click="VM.createRequest(roommate._id._id)">Send Request</button>
-        </li>
-      </ul>
-    </div>
-    <h6>Current Balance</h6>
-    <div class="balance">
-      <h1 class="balance">
-        ${{roommate.balance}}
-      </h1>
-    </div>
-    <h6>Requests From <span style="text-transform:capitalize">{{roommate._id.name}}</span></h6>
-    <div class="requests" data-ng-repeat="request in roommate.requests">
-      <h5>
-        ${{request.amount}}
-      </h5>
-      <p>
-        {{request.description}}
-      </p>
-      <p class="glyphicon glyphicon-ok" data-ng-click="VM.acceptRequest(roommate._id._id, request._id)"></p>
-      <p class="glyphicon glyphicon-remove" data-ng-click="VM.deleteRequest(roommate._id._id, request._id)"></p>
+  <div data-ng-repeat="roommate in VM.roommates">
+    <div class="roommate" data-ng-if="roommate.status === 'active'">
+      <h3 style="text-transform:capitalize">{{roommate._id.name}}</h3>
+      <div class="btn-group">
+        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Owes Me <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            <div class="input-group">
+              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="$" data-ng-model="VM.newRequest.amount">
+              <span class="input-group-addon">.00</span>
+            </div>
+          </li>
+          <li>
+            <div class="input-group">
+              <input type="text" class="form-control" aria-label="For" placeholder="Short Description" data-ng-model="VM.newRequest.description">
+            </div>
+          </li>
+          <li>
+            <button type="submit" class="btn btn-success" data-ng-click="VM.createRequest(roommate._id._id)">Send Request</button>
+          </li>
+        </ul>
+      </div>
+      <h6>Current Balance</h6>
+      <div class="balance">
+        <h1 class="balance">
+          <span class="small">$</span>{{roommate.balance}}
+        </h1>
+      </div>
+      <h6>Requests From <span style="text-transform:capitalize">{{roommate._id.name}}</span></h6>
+      <div class="requests" data-ng-repeat="request in roommate.requests">
+        <h5>
+          ${{request.amount}}
+        </h5>
+        <p>
+          {{request.description}}
+        </p>
+        <p class="glyphicon glyphicon-ok" data-ng-click="VM.acceptRequest(roommate._id._id, request._id)"></p>
+        <p class="glyphicon glyphicon-remove" data-ng-click="VM.deleteRequest(roommate._id._id, request._id)"></p>
+      </div>
     </div>
   </div>
 </div>

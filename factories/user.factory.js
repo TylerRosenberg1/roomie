@@ -28,7 +28,7 @@
         return $http({
           method: 'POST',
           url: 'http://localhost:7000/api/user/search',
-          data: {username: username}
+          data: {username: username.toLowerCase()}
         })
       }
     }

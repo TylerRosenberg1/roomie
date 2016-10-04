@@ -5,10 +5,11 @@
   .module("roomtrack")
   .controller("userIndexController", [
     "userFactory",
+    "roommateFactory",
     userIndexControllerFunction
   ])
 
-  function userIndexControllerFunction(userFactory) {
+  function userIndexControllerFunction(userFactory, roommateFactory) {
     var vm = this;
     vm.search = function() {
       userFactory.search(vm.username).then(function(response) {
@@ -22,7 +23,9 @@
       })
     }
     vm.createRoommate = function() {
-      
+      roommateFactory.create(vm.user._id).then(function(response) {
+        console.log(response);
+      })
     }
   }
 }())

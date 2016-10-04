@@ -36,11 +36,11 @@
       controllerAs: "VM",
       templateUrl: "views/user/show.html"
     })
-    .state("requestIndex", {
-      url: "/user/:id/requests",
-      controller: "requestsIndexController",
+    .state("roommateRequestIndex", {
+      url: "/user/:id/roommate/requests",
+      controller: "roommateRequestIndexController",
       controllerAs: "VM",
-      templateUrl: "views/request/index.html"
+      templateUrl: "views/roommate/index.html"
     })
   }
 }())

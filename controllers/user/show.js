@@ -13,7 +13,6 @@
   function userShowControllerFunction(userFactory, requestFactory, $stateParams) {
     var vm = this;
     userFactory.show($stateParams.id).then(function(response) {
-      console.log(response);
       vm.name = response.data.name;
       vm.roommates = response.data.roommates;
     })

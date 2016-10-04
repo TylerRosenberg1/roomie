@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="page-header">
+    <h1>Pending <small>Roommate Requests</small></h1>
+  </div>
+</div>
+
+<div data-ng-repeat="requester in VM.roommateRequesters">
+  <div class="roommate" data-ng-if="requester.status === 'pending'">
+    <h3>{{requester._id.name}}</h3>
+    <p>{{requester._id.username}}</p>
+    <button type="submit" class="btn btn-success" data-ng-click="VM.acceptRequest(requester._id._id)">Add</button>
+    <button type="submit" class="btn btn-danger" data-ng-click="VM.destroyRequest(requester._id._id)">Ignore</button>
+  </div>
+</div>

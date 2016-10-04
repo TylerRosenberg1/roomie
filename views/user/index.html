@@ -4,6 +4,12 @@
   </div>
 </div>
 
+<div class="error" data-ng-if="VM.error">
+  <p>
+    {{VM.error}}
+  </p>
+</div>
+
 <div class="container">
   <form>
     <input type="text" class="form-control" placeholder="Find By Username" data-ng-model="VM.username">
@@ -14,5 +20,5 @@
 <div class="roommate" data-ng-if="VM.user">
   <h3>{{VM.user.name}}</h3>
   <p>{{VM.user.username}}</p>
-  <button type="submit" class="btn btn-success" data-ng-click="VM.createRoommate()">Send Roommate Request</button>
+  <button type="submit" class="btn btn-success" data-ng-click="VM.createRoommate()">Send Request</button>
 </div>

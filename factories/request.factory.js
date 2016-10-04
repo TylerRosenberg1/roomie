@@ -5,7 +5,6 @@
   .module("roomtrack")
   .factory("requestFactory", [
     "$http",
-    "$stateParams",
     requestFactoryFunction
   ])
 
