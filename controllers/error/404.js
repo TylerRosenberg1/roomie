@@ -2,13 +2,12 @@
 
 (function() {
   angular
-  .module("roomtrack")
+  .module("roomietrack")
   .controller("error404Controller", [
     error404ControllerFunction
   ])
 
   function error404ControllerFunction() {
-    var vm = this;
 
   }
 }())

@@ -2,7 +2,7 @@
 
 (function() {
   angular
-  .module("roomtrack")
+  .module("roomietrack")
   .factory("roommateFactory", [
     "$http",
     roommateFactoryFunction
@@ -13,26 +13,26 @@
       create: function(roommateId) {
         return $http({
           method: 'POST',
-          url: "http://localhost:7000/api/roommate",
+          url: "http://roomietrack.herokuapp.com/api/roommate",
           data: {roommateId: roommateId}
         })
       },
       index: function() {
         return $http({
           method: 'GET',
-          url: `http://localhost:7000/api/user/roommate/requests`
+          url: `http://roomietrack.herokuapp.com/api/user/roommate/requests`
         })
       },
       update: function(requesterId) {
         return $http({
           method: 'PUT',
-          url: `http://localhost:7000/api/roommate/${requesterId}/update`
+          url: `http://roomietrack.herokuapp.com/api/roommate/${requesterId}/update`
         })
       },
       destroy: function(requesterId) {
         return $http({
           method: 'DELETE',
-          url: `http://localhost:7000/api/roommate/${requesterId}/delete`
+          url: `http://roomietrack.herokuapp.com/api/roommate/${requesterId}/delete`
         })
       }
     }

@@ -2,7 +2,7 @@
 
 (function() {
   angular
-  .module("roomtrack")
+  .module("roomietrack")
   .controller("userShowController", [
     "userFactory",
     "requestFactory",
@@ -10,7 +10,7 @@
     "$location",
     userShowControllerFunction
   ])
-  
+
 
   function userShowControllerFunction(userFactory, requestFactory, $stateParams, $location) {
     var vm = this;

@@ -2,7 +2,7 @@
 
 (function() {
   angular
-  .module("roomtrack")
+  .module("roomietrack")
   .controller("userEditController", [
     "userFactory",
     userEditControllerFunction
@@ -15,7 +15,7 @@
     });
     vm.editUser = function() {
       userFactory.update(vm.user).then(function(response) {
-        
+
       })
     }
   }

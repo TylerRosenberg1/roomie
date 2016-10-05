@@ -2,7 +2,7 @@
 
 (function() {
   angular
-  .module("roomtrack")
+  .module("roomietrack")
   .factory("userFactory", [
     "$http",
     "$stateParams",
@@ -14,27 +14,27 @@
       create: function(newUser) {
         return $http({
           method: 'POST',
-          url: 'http://localhost:7000/user',
+          url: 'http://roomietrack.herokuapp.com/user',
           data: newUser
         })
       },
       show: function() {
         return $http({
           method: 'GET',
-          url: "http://localhost:7000/api/user/dashboard"
+          url: "http://roomietrack.herokuapp.com/api/user/dashboard"
         })
       },
       search: function(username) {
         return $http({
           method: 'POST',
-          url: 'http://localhost:7000/api/user/search',
+          url: 'http://roomietrack.herokuapp.com/api/user/search',
           data: {username: username.toLowerCase()}
         })
       },
       update: function(user) {
         return $http({
           method: 'POST',
-          url: 'http://localhost:7000/api/user/update',
+          url: 'http://roomietrack.herokuapp.com/api/user/update',
           data: {user: user}
         })
       }

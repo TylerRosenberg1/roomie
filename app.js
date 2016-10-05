@@ -2,7 +2,7 @@
 
 (function() {
   angular
-  .module("roomtrack", [
+  .module("roomietrack", [
     "ui.router"
   ])
   .config([
@@ -21,6 +21,12 @@
     $httpProvider.interceptors.push('authInterceptor');
 
     $stateProvider
+    .state("welcome", {
+      url: "/",
+      controller: "welcomeController",
+      controllerAs: "VM",
+      templateUrl: "views/welcome.html"
+    })
     .state("sessionNew", {
       url: "/session/new",
       controller: "sessionNewController",

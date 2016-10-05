@@ -2,7 +2,7 @@
 
 (function() {
   angular
-  .module("roomtrack")
+  .module("roomietrack")
   .controller("sessionNewController", [
     "$http",
     "$window",
@@ -14,7 +14,7 @@
     vm.createSession = function() {
       $http({
         method: 'POST',
-        url: "http://localhost:7000/session/new",
+        url: "http://roomietrack.herokuapp.com/session/new",
         data: {user: vm.user}
       }).then(function success(response) {
         console.log(response);

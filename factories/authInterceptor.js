@@ -2,7 +2,7 @@
 
 (function() {
   angular
-  .module("roomtrack")
+  .module("roomietrack")
   .factory('authInterceptor', function ($rootScope, $q, $window) {
     return {
       request: function (config) {
