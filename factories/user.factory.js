@@ -14,27 +14,27 @@
       create: function(newUser) {
         return $http({
           method: 'POST',
-          url: 'http://roomietrack.herokuapp.com/user',
+          url: 'https://roomietrack.herokuapp.com/user',
           data: newUser
         })
       },
       show: function() {
         return $http({
           method: 'GET',
-          url: "http://roomietrack.herokuapp.com/api/user/dashboard"
+          url: "https://roomietrack.herokuapp.com/api/user/dashboard"
         })
       },
       search: function(username) {
         return $http({
           method: 'POST',
-          url: 'http://roomietrack.herokuapp.com/api/user/search',
+          url: 'https://roomietrack.herokuapp.com/api/user/search',
           data: {username: username.toLowerCase()}
         })
       },
       update: function(user) {
         return $http({
           method: 'POST',
-          url: 'http://roomietrack.herokuapp.com/api/user/update',
+          url: 'https://roomietrack.herokuapp.com/api/user/update',
           data: {user: user}
         })
       }

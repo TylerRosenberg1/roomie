@@ -14,7 +14,7 @@
     vm.createSession = function() {
       $http({
         method: 'POST',
-        url: "http://roomietrack.herokuapp.com/session/new",
+        url: "https://roomietrack.herokuapp.com/session/new",
         data: {user: vm.user}
       }).then(function success(response) {
         console.log(response);
