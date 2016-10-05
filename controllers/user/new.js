@@ -17,7 +17,7 @@
           vm.error = response.data.errors
         } else {
           $window.sessionStorage.token = response.data.token;
-          $window.location.href = "/#/user/dashboard"
+          $window.location.href = "/roomietrack/#/user/dashboard"
         }
       }, function error(error) {
 

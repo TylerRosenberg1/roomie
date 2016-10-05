@@ -16,12 +16,12 @@
     })
     vm.acceptRequest = function(requesterId) {
       roommateFactory.update(requesterId).then(function(response) {
-        $window.location.href = "/#/user/dashboard"
+        $window.location.href = "/roomietrack/#/user/dashboard"
       })
     }
     vm.destroyRequest = function(requesterId) {
       roommateFactory.destroy(requesterId).then(function(response) {
-        $window.location.href = "/#/user/dashboard"
+        $window.location.href = "/roomietrack/#/user/dashboard"
 
       })
     }
