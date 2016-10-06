@@ -17,7 +17,6 @@
         url: "https://roomietrack.herokuapp.com/session/new",
         data: {user: vm.user}
       }).then(function success(response) {
-        console.log(response);
         if (response.data.error) {
           vm.error = response.data.error;
           delete $window.sessionStorage.token;

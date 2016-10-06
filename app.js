@@ -18,8 +18,9 @@
 
   function routerFunction($stateProvider, $httpProvider) {
 
-    $httpProvider.interceptors.push('authInterceptor');
+    $httpProvider.interceptors.push('authInterceptor'); // Auth interceptor to push JWT to server on every new request
 
+    /* ALL View models referred to as VM in controllers */
     $stateProvider
     .state("welcome", {
       url: "/",

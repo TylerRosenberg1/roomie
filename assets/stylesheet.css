@@ -50,3 +50,7 @@ input {
   border-radius: 10px;
   margin-top: 0.2em;
 }
+
+.error {
+  color: rgb(215, 53, 31);
+}
