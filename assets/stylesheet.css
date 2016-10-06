@@ -16,6 +16,10 @@ input {
   width: 300px;
 }
 
+.navbar-brand {
+  font-family: 'Indie Flower', cursive;
+}
+
 .input-group {
   margin-bottom: 0.5em;
   text-align: center;
