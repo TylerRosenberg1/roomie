@@ -31,8 +31,8 @@
       </div>
       <h6>Current Balance</h6>
       <div class="balance">
-        <h1 class="balance">
-          <span class="small">$</span>{{roommate.balance}}
+        <h1 class="balance" data-ng-class="roommate.balance < 0 ? 'balance-neg' : 'balance-pos'">
+          {{roommate.balance}}
         </h1>
       </div>
       <h6>Requests From <span style="text-transform:capitalize">{{roommate._id.name}}</span></h6>

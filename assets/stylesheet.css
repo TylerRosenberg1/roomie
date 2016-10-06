@@ -33,6 +33,14 @@ input {
   margin-top: 0;
 }
 
+.balance-neg {
+  color: rgb(230, 29, 77);
+}
+
+.balance-pos {
+  color: rgb(48, 210, 123);
+}
+
 .requests p,
 .requests h5 {
   display: inline-block;
